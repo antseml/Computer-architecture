@@ -1,0 +1,12 @@
+limit: 2000
+memory_size: 0x1000
+memory_mapped_io:
+  0x80: [12345678]
+  0x84: []
+reports:
+  - name: result
+    slice: last
+    view: |
+      output: {io:0x84:dec}
+    assert: |
+      output: [] >>> [8]
