@@ -4,9 +4,9 @@ buf:          .byte  '________________________________'
 input_addr:   .word  0x80
 output_addr:  .word  0x84
 stack_top:    .word  0xF00
+alignment:    .byte  '____________________________________________________________________________________________'
 
     .text
-    .org     0x100
 
 _start:
     lui      t0, %hi(stack_top)

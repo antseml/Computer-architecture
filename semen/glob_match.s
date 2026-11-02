@@ -5,9 +5,9 @@ text_buf:     .byte  '________________________________'
 input_addr:   .word  0x80
 output_addr:  .word  0x84
 stack_top:    .word  0xF00
+alignment:    .byte  '____________________________________________________________'
 
     .text
-    .org     0x100
 
 _start:
     movea.l  stack_top, A7
