@@ -23,10 +23,12 @@ _start:
     bne      overflow
 
     jsr      reverse_words
-    halt
+    jmp      finish
 
 overflow:
     move.l   0xCCCCCCCC, (A1)
+
+finish:
     halt
 
 read_line:

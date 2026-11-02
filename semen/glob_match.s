@@ -34,10 +34,12 @@ _start:
     clr.l    D4
     jsr      match
     move.l   D0, (A1)
-    halt
+    jmp      finish
 
 overflow:
     move.l   0xCCCCCCCC, (A1)
+
+finish:
     halt
 
 read_line:

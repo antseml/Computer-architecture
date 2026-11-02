@@ -15,8 +15,7 @@ _start:
     store        n
     bgtz         compute
     load_imm     -1
-    store_ind    output_addr
-    halt
+    jmp          finish
 
 compute:
     load         n
@@ -25,10 +24,11 @@ compute:
     store        k
     mul          k
     bvs          overflow
-    store_ind    output_addr
-    halt
+    jmp          finish
 
 overflow:
     load_imm     0xCCCC_CCCC
+
+finish:
     store_ind    output_addr
     halt

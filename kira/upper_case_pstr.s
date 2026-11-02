@@ -26,12 +26,14 @@ _start:
     bnez     a0, overflow
 
     jal      ra, print_pstr
-    halt
+    j        finish
 
 overflow:
     lui      t0, %hi(0xCCCCCCCC)
     addi     t0, t0, %lo(0xCCCCCCCC)
     sw       t0, 0(s1)
+
+finish:
     halt
 
 read_pstr:
