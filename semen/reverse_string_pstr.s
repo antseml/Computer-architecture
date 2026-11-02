@@ -43,4 +43,4 @@ finish:
 overflow:
     @p output_addr b!
     0xCCCCCCCC !b
-    halt
+    finish ;
