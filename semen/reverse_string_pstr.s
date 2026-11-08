@@ -26,7 +26,6 @@ _start_write:
 _start_finish:
     halt
 
-\ ( -- chars... length | -1 )
 read_line:
     @p input_addr b!
     0 a!
@@ -54,7 +53,6 @@ read_line_discard:
     -1
     ;
 
-\ ( chars... length -- )
 write_reversed_pstr:
     lit buf a!
     dup
@@ -74,12 +72,10 @@ write_reversed_pstr_empty:
     drop
     ;
 
-\ ( byte -- )
 store_byte:
     @ @p preserve_high_bytes and xor !+
     ;
 
-\ ( value -- )
 write_value:
     @p output_addr b!
     !b
