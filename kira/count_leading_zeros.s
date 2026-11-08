@@ -12,12 +12,10 @@ _start:
     write_value
     halt
 
-\ ( -- value )
 read_value:
     @p input_addr a! @
     ;
 
-\ ( value -- count )
 count_leading_zeros:
     dup
     if count_leading_zeros_zero
@@ -41,12 +39,10 @@ count_leading_zeros_zero:
     @p word_bits
     ;
 
-\ ( value -- )
 write_value:
     @p output_addr a! !
     ;
 
-\ ( x y -- y x )
 swap:
     over >r >r drop r> r>
     ;
