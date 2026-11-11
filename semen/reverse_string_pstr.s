@@ -7,9 +7,9 @@ buffer_size:     .word  32
 newline:         .word  10
 preserve_high_bytes: .word  0xFFFFFF00
 overflow_value:  .word  0xCCCCCCCC
-alignment:       .byte  '________________________________________________________________________________'
 
     .text
+    .org  0x88
 
 _start:
     read_line
